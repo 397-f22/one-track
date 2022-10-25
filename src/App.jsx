@@ -1,45 +1,46 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import PackageCardList from "./components/PackageCardList";
+import AddPackage from "./components/AddPackage";
+import Header from "./components/Header";
+import AddPackageForm from "./components/addPackageForm";
+
+const initData = {
+  "Package 1": {
+    "time": "something"
+  },
+  "Package 2": {
+    "time": "something",
+  }
+}
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  
+
+  // const [data, error] = useDbData("/");
+  // if (error) return <h1>Error loading data: {error.toString()}</h1>;
+  // if (data === undefined) return <h1>Loading data...</h1>;
+  // if (!data) return <h1>No data found</h1>;
+
+  const [data, setData] = useState(initData);
+	const [open, setOpen] = useState(false);
+
+	const openModal = () => setOpen(true);
+	const closeModal = () => setOpen(false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test hot module replacement (HMR).
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+		<div className="container">
+			<Header />
+			<PackageCardList data={data} />
+
+			<button type="button" className="btn btn-outline-danger" onClick={openModal}>
+				Add Package
+			</button>
+			<AddPackage open={open} close={closeModal}>
+				<AddPackageForm setData={setData} data={data}/>
+			</AddPackage>
+		</div>
+	);
 };
 
 export default App;
