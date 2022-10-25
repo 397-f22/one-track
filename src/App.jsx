@@ -1,16 +1,21 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useState } from "react";
 import PackageCardList from "./components/PackageCardList";
 import AddPackage from "./components/AddPackage";
 import Header from "./components/Header";
 import AddPackageForm from "./components/addPackageForm";
+import Search from "./components/Search";
 
 const initData = {
   "Package 1": {
-    "time": "something"
+    "time": "something",
+	"image": "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"
   },
   "Package 2": {
     "time": "something",
+	"image": "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"
   }
 }
 
@@ -31,6 +36,7 @@ const App = () => {
   return (
 		<div className="container">
 			<Header />
+			<Search/>
 			<PackageCardList data={data} />
 
 			<button type="button" className="btn btn-outline-danger" onClick={openModal}>

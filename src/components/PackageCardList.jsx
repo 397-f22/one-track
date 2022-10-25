@@ -4,7 +4,7 @@ const PackageCardList = ({ data }) => {
     return(
         <div>
             {Object.entries(data).map(([id, data]) => 
-                <PackageCard title={id} />        
+                <PackageCard title={id} image={data.image}/>        
             )}
         </div>
     )
