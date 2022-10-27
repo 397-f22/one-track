@@ -1,10 +1,9 @@
 import PackageCard from "./PackageCard";
-const PackageCardList = ({ data }) => {
-    
+const PackageCardList = ({ data }) => {    
     return(
         <div>
             {Object.entries(data).map(([id, data]) => 
-                <PackageCard title={id} image={data.image}/>        
+                <PackageCard title={id} data={data}/>        
             )}
         </div>
     )

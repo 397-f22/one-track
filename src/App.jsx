@@ -9,19 +9,30 @@ import AddPackageForm from "./components/addPackageForm";
 import Search from "./components/Search";
 
 const initData = {
-  "Package 1": {
-    "time": "something",
-	"image": "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"
-  },
-  "Package 2": {
-    "time": "something",
-	"image": "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"
-  }
+	"1Z12345E0205271688": {
+		"carrier": "UPS",
+		"package_name": "shoes",
+		"estimated_delivery": "2021-09-20T14:03:00",
+		"last_checkpoint_location": "Skokie, IL",
+		"response": "In Transit"
+	},
+	"1Z12345E6605272234": {
+		"carrier": "UPS",
+		"package_name": "candy",
+		"estimated_delivery": "2021-09-20T14:03:00",
+		"last_checkpoint_location": "Chicago, IL",
+		"response": "In Transit"
+	},
+	"1Z12345E0305271640": {
+		"carrier": "Amazon",
+		"package_name": "white shirt",
+		"estimated_delivery": "2021-09-20T14:03:00",
+		"last_checkpoint_location": "Skokie, IL",
+		"response": "Delivered"
+	}
 }
 
 const App = () => {
-  
-
   // const [data, error] = useDbData("/");
   // if (error) return <h1>Error loading data: {error.toString()}</h1>;
   // if (data === undefined) return <h1>Loading data...</h1>;
