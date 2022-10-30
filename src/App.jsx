@@ -32,6 +32,7 @@ const initData = {
 	}
 }
 
+
 const App = () => {
   // const [data, error] = useDbData("/");
   // if (error) return <h1>Error loading data: {error.toString()}</h1>;
@@ -54,7 +55,7 @@ const App = () => {
 				Add Package
 			</button>
 			<AddPackage open={open} close={closeModal}>
-				<AddPackageForm setData={setData} data={data}/>
+				<AddPackageForm setData={setData} data={data} setPackages={setPackages}/>
 			</AddPackage>
 		</div>
 	);
