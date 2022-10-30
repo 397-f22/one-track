@@ -37,8 +37,8 @@ const App = () => {
   // if (error) return <h1>Error loading data: {error.toString()}</h1>;
   // if (data === undefined) return <h1>Loading data...</h1>;
   // if (!data) return <h1>No data found</h1>;
-
-  const [data, setData] = useState(initData);
+  	const [data, setData] = useState(initData);
+	const [packages, setPackages] = useState(initData);
 	const [open, setOpen] = useState(false);
 
 	const openModal = () => setOpen(true);
@@ -47,8 +47,8 @@ const App = () => {
   return (
 		<div className="container">
 			<Header />
-			<Search/>
-			<PackageCardList data={data} />
+			<Search data={data} setPackages={setPackages}/>
+			<PackageCardList packages={packages} />
 
 			<button type="button" className="btn btn-outline-danger" onClick={openModal}>
 				Add Package
