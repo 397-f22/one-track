@@ -14,10 +14,25 @@
     margin: 0px;
   }
 
-  .card-img-left{
-    max-width:230px;
-    max-height:95px;
+  .img-wrapper {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .carrier-image {
+    max-width:100%;
+    max-height:100%;
     width: auto;
     height: auto;
+  }
 
+  .card-body {
+    padding: 8px !important;
+    display: flex;
+    flex-direction: row;
+
+    gap: 16px;
   }
