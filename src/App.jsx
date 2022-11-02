@@ -7,6 +7,7 @@ import AddPackage from "./components/AddPackage";
 import Header from "./components/Header";
 import AddPackageForm from "./components/addPackageForm";
 import Search from "./components/Search";
+import {addNewPackage, lastCheckpoint} from './utilities/api';
 
 const initData = {
 	"1Z12345E0205271688": {
@@ -38,6 +39,11 @@ const App = () => {
   // if (error) return <h1>Error loading data: {error.toString()}</h1>;
   // if (data === undefined) return <h1>Loading data...</h1>;
   // if (!data) return <h1>No data found</h1>;
+
+	// if package already created, will give you a 400 bad request
+	addNewPackage('TBA303524937082', 'amazon').then(data => console.log(data));
+	lastCheckpoint('kmz8zwcgy8s1ul9yuqw2001h').then(data => console.log(data));
+
   	const [data, setData] = useState(initData);
 	const [packages, setPackages] = useState(initData);
 	const [open, setOpen] = useState(false);
