@@ -1,4 +1,7 @@
 import "./PackageCard.css"
+import { useState } from "react";
+import Modal from "./Modal";
+import PackageModal from "./PackageModal";
 
 const PackageCard = ({images, data}) => {
     const {carrier, estimated_delivery, last_checkpoint_location, package_name, response} = data
@@ -8,8 +11,14 @@ const PackageCard = ({images, data}) => {
         month: '2-digit',
         day: '2-digit',
       });
+
+    const [open, setOpen] = useState(false);
+    const openModal = () => setOpen(true);
+    const closeModal = () => setOpen(false);
+  
     return(
-        <div className="card m-1 p-2 flex-row">            
+        <>
+        <div className="card m-1 p-2 flex-row" onClick={openModal}>            
             <div className="card-body">
                 <div className="img-wrapper">
                     <img src={images[carFormatted].url} className="carrier-image"></img>
@@ -21,6 +30,10 @@ const PackageCard = ({images, data}) => {
                 </div>
             </div>
         </div>
+        <Modal open={open} close={closeModal}>
+            <PackageModal data={data}/>
+        </Modal>
+        </>
     )
 }
 
