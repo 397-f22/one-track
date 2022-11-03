@@ -25,8 +25,8 @@
   .carrier-image {
     max-width:100%;
     max-height:100%;
-    width: auto;
-    height: auto;
+    width: 50%;
+    /* height: auto; */
   }
 
   .card-body {
