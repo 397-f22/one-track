@@ -18,8 +18,8 @@ const App = () => {
 	if (!userData) return <h1>No data found</h1>;
 
 	// if package already created, will give you a 400 bad request
-	addNewPackage('TBA303524937082', 'amazon').then(data => console.log(data));
-	lastCheckpoint('kmz8zwcgy8s1ul9yuqw2001h').then(data => console.log(data));
+	// addNewPackage('TBA303524937082', 'amazon').then(data => console.log(data));
+	// lastCheckpoint('kmz8zwcgy8s1ul9yuqw2001h').then(data => console.log(data));
 
 
 	
