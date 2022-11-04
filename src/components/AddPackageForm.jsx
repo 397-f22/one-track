@@ -1,6 +1,6 @@
 import "./AddPackageForm.css";
 
-const AddPackageForm = ({data, setData, setPackages}) => {
+const AddPackageForm = ({data, setData}) => {
     const submit = (evt) => {
         evt.preventDefault();
         const id = document.getElementById("trackingNumber").value;
@@ -20,7 +20,6 @@ const AddPackageForm = ({data, setData, setPackages}) => {
     
         data[id] = newPackage;
         setData(data);
-        setPackages(data);
         // location.reload();
         // }
     };

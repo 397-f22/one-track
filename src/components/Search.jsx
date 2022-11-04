@@ -2,11 +2,11 @@ import "./Search.css"
 
 
 
-const Search = ({data, setPackages}) =>{
+const Search = ({matchName, setMatchName}) =>{
     return (
         <div className="input-group">
             <form className="form-inline flex-row w-100">
-                <input id="search-bar" className="form-control mr-0" type="search" placeholder="Search Package Name" aria-label="Search" onChange={() => updatePackages(data, setPackages)}/>
+                <input id="search-bar" className="form-control mr-0" type="search" placeholder="Search Package Name" aria-label="Search" onChange={() => setMatchName(event.target.value.toLowerCase())}/>
                 {/* <button className="btn btn-outline-primary m-0" type="submit" >Search</button> */}
             </form>
         </div>
