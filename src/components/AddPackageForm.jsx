@@ -1,7 +1,14 @@
 import "./AddPackageForm.css";
 import {addNewPackage, lastCheckpoint} from '../utilities/api';
+import { useState } from "react";
 
 const AddPackageForm = ({data, setData}) => {
+    const [apiData, setapiData] = useState([])
+
+    const saveData = async (id, carrier) => {
+        const response = await addNewPackage(id, carrier)
+        setapiData(response.data)
+    }
     const submit = (evt) => {
         evt.preventDefault();
         const id = document.getElementById("trackingNumber").value;
@@ -19,20 +26,24 @@ const AddPackageForm = ({data, setData}) => {
                 "response": "In Transit"
         }
         // add the tracking number to the api and put the new id into the data
-        // addNewPackage(id, carrier).then(data => apiData = data);
+        saveData(id, carrier);
+
+        console.log(apiData)
+        
         // need to deal with if we get a 400 error aka it is already in the API
         // 
-        // var newPackage = {
+        // var newPackageAPI = {
         //     "package_name": document.getElementById("packageName").value,
         //     "carrier": carrier,
         //     "estimated_delivery": "2021-09-20T14:03:00",
-        //     "last_checkpoint_location": apiData.checkpoint.checkpoint_time,
-        //     "response": apiData.tag,
-        //     "apiID": apiData.id
+        //     // "last_checkpoint_location": apiData.checkpoint.checkpoint_time,
+        //     // "response": apiData.tag,
+        //     "apiID": apiData.tracking.id
         // }
-
+        // console.log(newPackageAPI)
         data[id] = newPackage;
         setData(data);
+  
         // location.reload();
         // }
     };
