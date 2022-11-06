@@ -1,7 +1,7 @@
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import {addNewPackage, lastCheckpoint} from './utilities/api';
+import { addNewPackage, lastCheckpoint } from './utilities/api';
 
 import { useDbData } from "./utilities/firesbase";
 import Main from "./components/Main";
@@ -22,13 +22,15 @@ const App = () => {
 	// lastCheckpoint('kmz8zwcgy8s1ul9yuqw2001h').then(data => console.log(data));
 
 
-	
+
 	if (imageError) return <h1>Error loading data: {imageError.toString()}</h1>;
 	if (imageData === undefined) return <h1>Loading data...</h1>;
 	if (!imageData) return <h1>No data found</h1>;
 
 	return (
-		<Main userData={userData} imageData={imageData}></Main>
+		<div className="background">
+			<Main userData={userData} imageData={imageData}></Main>
+		</div>
 	);
 };
 

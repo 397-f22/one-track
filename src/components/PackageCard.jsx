@@ -25,8 +25,8 @@ const PackageCard = ({images, data}) => {
                 </div>
                 <div className="package-info">
                     <h5 className="card-title">{package_name}</h5>
-                    <p className="card-text">Delivery: {deliv_date}</p>
-                    <p className="card-text">Status: {response}</p>
+                    <p className="card-text"><b>Delivery:</b> {deliv_date}</p>
+                    <p className="card-text"><b>Status:</b> {response}</p>
                 </div>
             </div>
         </div>

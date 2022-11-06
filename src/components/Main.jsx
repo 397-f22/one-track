@@ -35,7 +35,7 @@ const Main = ({imageData, userData}) => {
 			<Search matchName={matchName} setMatchName={setMatchName} />
 			<PackageCardList packages={packages} images={imageData}/>
 
-			<button type="button" className="btn btn-outline-danger" onClick={openModal}>
+			<button id="add-package-button" type="button" className="btn btn-outline-danger" onClick={openModal}>
 				Add Package
 			</button>
 			<AddPackage open={open} close={closeModal}>
