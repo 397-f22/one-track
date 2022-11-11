@@ -11,7 +11,7 @@ import Main from "./components/Main";
 const App = () => {
   const [user] = useAuthState();
   console.log(user);
-  const uid = user?.uid ? user.uid : "12345678";
+  const uid = user?.uid ? user.uid : "s5IfTVREfbM81Y3EHXGVBuCMbQW2";
 
 
 	const [userData, error] = useDbData(`/users/${uid}`);

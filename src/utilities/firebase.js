@@ -49,10 +49,6 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 
-<<<<<<< Updated upstream:src/utilities/firebase.js
-
-=======
->>>>>>> Stashed changes:src/utilities/firesbase.jsx
 export const signInWithGoogle = () => {
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
 };
@@ -63,18 +59,10 @@ export { firebaseSignOut as signOut };
 
 export const useAuthState = () => {
   const [user, setUser] = useState();
-<<<<<<< Updated upstream:src/utilities/firebase.js
-
-=======
   
->>>>>>> Stashed changes:src/utilities/firesbase.jsx
   useEffect(() => (
     onAuthStateChanged(getAuth(firebase), setUser)
   ));
 
   return [user];
-<<<<<<< Updated upstream:src/utilities/firebase.js
 };
-=======
-};
->>>>>>> Stashed changes:src/utilities/firesbase.jsx
