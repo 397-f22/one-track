@@ -21,7 +21,9 @@ h1 {
   font-size: 10px;
   width: 18%;
 }
+
 #login-button{
   width: 18%;
   font-size: 10px;
+  visibility: hidden;
 }
