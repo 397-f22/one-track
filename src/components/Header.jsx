@@ -19,7 +19,7 @@ const Header = ({ data, setData }) => {
             <h1>One Track</h1>
 
             <button id="refresh-button" type="button" className="btn btn-outline-danger" onClick={() => updatePackages(data, setData, update)}>
-                R
+                Refresh
             </button>
         </header>
     )
