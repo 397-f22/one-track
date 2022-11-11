@@ -3,13 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { addNewPackage, lastCheckpoint } from './utilities/api';
 
+<<<<<<< Updated upstream
 import { useDbData } from "./utilities/firebase.js";
+=======
+import { useDbData } from "./utilities/firebase";
+import { useAuthState } from "./utilities/firebase";
+>>>>>>> Stashed changes
 import Main from "./components/Main";
 
-// temporary and should be changed when we add more users
-const uid = "12345678";
 
 const App = () => {
+  const [user] = useAuthState();
+  console.log(user);
+  const uid = user?.uid ? user.uid : "12345678";
+
+
 	const [userData, error] = useDbData(`/users/${uid}`);
 	const [imageData, imageError] = useDbData(`/images`);
 

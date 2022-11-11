@@ -1,8 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { useCallback, useEffect, useState } from 'react';
 import { getDatabase, onValue, ref, update } from 'firebase/database';
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
-
+import { connectAuthEmulator, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithCredential, signOut } from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAXzlkZkvbAwHjKc4qA6zPYfoAuHiwg0c0",
@@ -50,7 +49,10 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 
+<<<<<<< Updated upstream:src/utilities/firebase.js
 
+=======
+>>>>>>> Stashed changes:src/utilities/firesbase.jsx
 export const signInWithGoogle = () => {
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
 };
@@ -61,10 +63,18 @@ export { firebaseSignOut as signOut };
 
 export const useAuthState = () => {
   const [user, setUser] = useState();
+<<<<<<< Updated upstream:src/utilities/firebase.js
 
+=======
+  
+>>>>>>> Stashed changes:src/utilities/firesbase.jsx
   useEffect(() => (
     onAuthStateChanged(getAuth(firebase), setUser)
   ));
 
   return [user];
+<<<<<<< Updated upstream:src/utilities/firebase.js
 };
+=======
+};
+>>>>>>> Stashed changes:src/utilities/firesbase.jsx

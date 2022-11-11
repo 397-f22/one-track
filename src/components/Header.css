@@ -1,3 +1,7 @@
+header{
+  position: relative;
+}
+
 h1 {
   padding: 20px;
   color: #7c5f3d;
@@ -7,4 +11,10 @@ h1 {
   text-align: center;
 
   text-shadow: 0px 2px #ffd7b5;
+}
+
+#login-button{
+  position: absolute;
+  top: 1.8rem;
+  right: 1rem;
 }
