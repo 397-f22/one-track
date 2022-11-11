@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { addNewPackage, lastCheckpoint } from './utilities/api';
 
-import { useDbData } from "./utilities/firesbase";
+import { useDbData } from "./utilities/firebase.js";
 import Main from "./components/Main";
 
 // temporary and should be changed when we add more users
