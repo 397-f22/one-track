@@ -8,12 +8,12 @@ import { useAuthState } from "./utilities/firebase";
 import Main from "./components/Main";
 
 // temporary and should be changed when we add more users
-export const uid = "123456";
+export const uid = "12345678";
 
 const App = () => {
   const [user] = useAuthState();
   console.log(user);
-  const uid = user?.uid ? user.uid : "123456";
+  const uid = user?.uid ? user.uid : "12345678";
 
 
 	const [userData, error] = useDbData(`/users/${uid}`);
