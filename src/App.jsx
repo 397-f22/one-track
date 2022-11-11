@@ -3,12 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { addNewPackage, lastCheckpoint } from './utilities/api';
 
-<<<<<<< Updated upstream
-import { useDbData } from "./utilities/firebase.js";
-=======
 import { useDbData } from "./utilities/firebase";
 import { useAuthState } from "./utilities/firebase";
->>>>>>> Stashed changes
 import Main from "./components/Main";
 
 
