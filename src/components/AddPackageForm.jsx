@@ -3,7 +3,7 @@ import {addNewPackage, lastCheckpoint} from '../utilities/api';
 import { useState } from "react";
 import { uid } from "../App";
 
-import { useDbUpdate } from "../utilities/firesbase";
+import { useDbUpdate } from "../utilities/firebase";
 
 const AddPackageForm = ({data, setData}) => {
     const [update, result] = useDbUpdate(`/users/${uid}/packages`);

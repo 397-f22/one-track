@@ -1,16 +1,23 @@
+import { signInWithGoogle } from "../utilities/firebase";
 import "./Header.css";
 import { uid } from "../App";
 
-import { useDbUpdate } from "../utilities/firesbase";
+import { useDbUpdate } from "../utilities/firebase";
 import { lastCheckpoint } from "../utilities/api";
 
 const Header = ({ data, setData }) => {
     const [update, result] = useDbUpdate(`/users/${uid}/packages`);
     return (
         <header className="header">
-            {/* This is for styling */}
-            <button id="balancing-button" type="button" className="btn btn-outline-danger" onClick={() => updatePackages(data, setData, update)}>R</button>
+            <button
+                id="login-button"
+                type="button"
+                class="btn btn-outline-danger"
+                onClick={() => signInWithGoogle()}>
+                login
+            </button>
             <h1>One Track</h1>
+
             <button id="refresh-button" type="button" className="btn btn-outline-danger" onClick={() => updatePackages(data, setData, update)}>
                 R
             </button>

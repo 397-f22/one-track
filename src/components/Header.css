@@ -18,8 +18,10 @@ h1 {
 
 #refresh-button {
   height: fit-content;
+  font-size: 10px;
+  width: 18%;
 }
-
-#balancing-button {
-  visibility: hidden;
+#login-button{
+  width: 18%;
+  font-size: 10px;
 }
