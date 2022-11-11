@@ -1,15 +1,18 @@
 import "./AddPackageForm.css";
 import {addNewPackage, lastCheckpoint} from '../utilities/api';
 import { useState } from "react";
+import { uid } from "../App";
+
+import { useDbUpdate } from "../utilities/firesbase";
 
 const AddPackageForm = ({data, setData}) => {
-    const [apiData, setapiData] = useState([])
+    const [update, result] = useDbUpdate(`/users/${uid}/packages`);
 
     const saveData = async (id, carrier) => {
         const response = await addNewPackage(id, carrier)
-        setapiData(response.data)
+        return response
     }
-    const submit = (evt) => {
+    const submit = async (evt) => {
         evt.preventDefault();
         const id = document.getElementById("trackingNumber").value;
         const carrier = document.getElementById("carrier").value;
@@ -26,27 +29,35 @@ const AddPackageForm = ({data, setData}) => {
                 "response": "In Transit"
         }
         // add the tracking number to the api and put the new id into the data
-        saveData(id, carrier);
+        let response = await saveData(id, carrier);
 
-        console.log(apiData)
-        
+        //console.log(apiData)
+
+        console.log(response);
         // need to deal with if we get a 400 error aka it is already in the API
         // 
-        // var newPackageAPI = {
-        //     "package_name": document.getElementById("packageName").value,
-        //     "carrier": carrier,
-        //     "estimated_delivery": "2021-09-20T14:03:00",
-        //     // "last_checkpoint_location": apiData.checkpoint.checkpoint_time,
-        //     // "response": apiData.tag,
-        //     "apiID": apiData.tracking.id
-        // }
-        // console.log(newPackageAPI)
-        data[id] = newPackage;
-        setData(data);
+
+        let tracking_info = await lastCheckpoint(response.data.tracking.id);
+
+        console.log(tracking_info)
+
+
+        var newPackageAPI = {
+            "package_name": document.getElementById("packageName").value,
+            "carrier": carrier,
+            "last_updated": tracking_info.data.checkpoint.checkpoint_time,
+            "last_checkpoint_location": tracking_info.data.checkpoint.city,
+            "response": tracking_info.data.tag,
+            "apiID": tracking_info.data.id
+        }
+        console.log(newPackageAPI)
+        setData({[id]: newPackageAPI, ...data});
   
-        // location.reload();
-        // }
+        
+        update({[id]: newPackageAPI});
     };
+
+    //console.log(data);
     return (
         <form>
             <div className="form-group">

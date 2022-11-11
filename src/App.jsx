@@ -7,7 +7,7 @@ import { useDbData } from "./utilities/firesbase";
 import Main from "./components/Main";
 
 // temporary and should be changed when we add more users
-const uid = "12345678";
+export const uid = "123456";
 
 const App = () => {
 	const [userData, error] = useDbData(`/users/${uid}`);

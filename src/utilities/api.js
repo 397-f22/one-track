@@ -8,7 +8,7 @@ export async function addNewPackage(trackingNumber, slug) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'as-api-key': 'asat_2141c39a7e7046cd9d09f8bc86816919'
+        'as-api-key': 'asat_a35d4410724145ac886d9ecdaae30bd5'
       },
       body: JSON.stringify(data)
     });
@@ -19,7 +19,7 @@ export async function addNewPackage(trackingNumber, slug) {
 export async function lastCheckpoint(trackerId) {
     const response = await fetch(`https://api.aftership.com/v4/last_checkpoint/${trackerId}`, {
       headers: {
-        'as-api-key': 'asat_2141c39a7e7046cd9d09f8bc86816919'
+        'as-api-key': 'asat_a35d4410724145ac886d9ecdaae30bd5'
       },
     });
     return await response.json();

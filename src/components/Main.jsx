@@ -23,14 +23,14 @@ const Main = ({imageData, userData}) => {
     Object.entries(data).filter(
         (key) => {
             return key[1].package_name.includes(matchName) &&
-            key[1].response == (viewDelivered ? "Delivered" : "In Transit");
+            viewDelivered ? key[1].response == "Delivered" : key[1].response != "Delivered";
         }
     )
   );
 
 	return (
 		<div className="container">
-			<Header />
+			<Header setData={setData} data={data}/>
       <SwitchView viewDelivered={viewDelivered} setViewDelivered={setViewDelivered} />
 			<Search matchName={matchName} setMatchName={setMatchName} />
 			<PackageCardList packages={packages} images={imageData}/>
