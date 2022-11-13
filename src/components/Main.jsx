@@ -4,7 +4,7 @@ import { useState } from "react";
 import PackageCardList from "./PackageCardList";
 import AddPackage from "./AddPackage";
 import Header from "./Header";
-import AddPackageForm from "./addPackageForm";
+import AddPackageForm from "./AddPackageForm";
 import Search from "./Search";
 import SwitchView from "./SwitchView"
 
