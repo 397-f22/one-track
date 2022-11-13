@@ -1,0 +1,25 @@
+.switchView{
+  border: solid 3px #dcb798;
+  border-radius: 0.6rem;
+  background-color: #6b4d32;
+}
+
+.switchView>div{
+  display: inline-block;
+  width: 50%;
+  padding: 0.5rem 0px 0.5rem 0px;
+  text-align: center;
+  color: #ae8c66;
+}
+
+.switchView>div:first-child{
+  border-right: solid 3px #dcb798;
+}
+
+.switchedView{
+  color: #ffd7b5 !important;
+}
+
+.switchView>div:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  padding: 20px;
+  color: #7c5f3d;
+  margin: 0px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50px;
+  text-align: center;
+
+  text-shadow: 0px 2px #ffd7b5;
+}
+
+#refresh-button {
+  height: fit-content;
+  font-size: 10px;
+  width: 18%;
+}
+
+#login-button{
+  width: 18%;
+  font-size: 10px;
+  visibility: hidden;
+}
